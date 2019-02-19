@@ -1,0 +1,1 @@
+packer validate -var-file=variables.json WebServer.json

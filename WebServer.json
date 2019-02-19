@@ -1,0 +1,55 @@
+{
+    "variables":
+    {
+        "aws_access_key": "{{user `aws_access_key`}}",
+        "aws_secret_key": "{{user `aws_secret_key`}}",
+        "commit_id": "LATEST"
+    },
+
+    "builders": [{
+  "type": "amazon-ebs",
+  "region": "eu-west-1",
+  "instance_type": "t2.micro",
+  "ami_name": "Packer-Example {{timestamp}}",
+  "user_data_file": "./scripts/SetUpWinRM.ps1",
+  "communicator": "winrm",
+  "winrm_username": "Administrator",
+  "winrm_use_ssl": true,
+  "winrm_insecure": true,
+  "source_ami_filter": {
+    "filters": {
+      "name": "Windows_Server-2016-English-Full-Base*"
+    },
+    "owners": ["amazon"],
+    "most_recent": true
+  }
+}],
+    "provisioners": [
+        {
+            "type": "powershell",
+            "scripts": [
+                "./scripts/SetUpDevTools.ps1"
+            ]
+        },
+        {
+            "type": "file",
+            "source": "./tests",
+            "destination": "C:/Windows/Temp"
+        },
+        {
+            "type": "powershell",
+            "script": "./scripts/RunTests.ps1"
+        },
+        {
+            "type": "file",
+            "source": "TestResults.xml",
+            "destination": "TestResults.xml",
+            "direction": "download"
+        }
+    ],
+    "post-processors": [
+        {
+            "type": "manifest"
+        }
+    ]
+}
