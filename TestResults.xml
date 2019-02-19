@@ -1,15 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
-<test-results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="nunit_schema_2.5.xsd" name="Pester" total="2" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2019-02-19" time="11:35:18">
-  <environment user="Administrator" machine-name="EC2AMAZ-1UIIKSH" cwd="C:\Users\Administrator" user-domain="EC2AMAZ-1UIIKSH" platform="Microsoft Windows Server 2016 Datacenter|C:\Windows|\Device\Harddisk0\Partition1" nunit-version="2.5.8.0" os-version="10.0.14393" clr-version="4.0.30319.42000" />
+<test-results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="nunit_schema_2.5.xsd" name="Pester" total="3" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2019-02-19" time="14:37:00">
+  <environment user="Administrator" machine-name="EC2AMAZ-3GCUS5B" cwd="C:\Users\Administrator" user-domain="EC2AMAZ-3GCUS5B" platform="Microsoft Windows Server 2016 Datacenter|C:\Windows|\Device\Harddisk0\Partition1" nunit-version="2.5.8.0" os-version="10.0.14393" clr-version="4.0.30319.42000" />
   <culture-info current-culture="en-US" current-uiculture="en-US" />
-  <test-suite type="TestFixture" name="Pester" executed="True" result="Success" success="True" time="1.3029" asserts="0" description="Pester">
+  <test-suite type="TestFixture" name="Pester" executed="True" result="Success" success="True" time="2.234" asserts="0" description="Pester">
     <results>
-      <test-suite type="TestFixture" name="C:\Windows\Temp\tests\DevToolsInstalled.Tests.ps1" executed="True" result="Success" success="True" time="1.3029" asserts="0" description="C:\Windows\Temp\tests\DevToolsInstalled.Tests.ps1">
+      <test-suite type="TestFixture" name="C:\Windows\Temp\tests\DevToolsInstalled.Tests.ps1" executed="True" result="Success" success="True" time="2.234" asserts="0" description="C:\Windows\Temp\tests\DevToolsInstalled.Tests.ps1">
         <results>
-          <test-suite type="TestFixture" name="Dev Tools installation" executed="True" result="Success" success="True" time="1.3029" asserts="0" description="Dev Tools installation">
+          <test-suite type="TestFixture" name="Dev Tools installation" executed="True" result="Success" success="True" time="2.234" asserts="0" description="Dev Tools installation">
             <results>
-              <test-case description="installs nuget" name="Dev Tools installation.installs nuget" time="1.1156" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="installs git" name="Dev Tools installation.installs git" time="0.1873" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="installs nuget" name="Dev Tools installation.installs nuget" time="0.7754" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="installs git" name="Dev Tools installation.installs git" time="0.1316" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="installs web server" name="Dev Tools installation.installs web server" time="1.3271" asserts="0" success="True" result="Success" executed="True" />
             </results>
           </test-suite>
         </results>

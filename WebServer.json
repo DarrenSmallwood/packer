@@ -10,7 +10,7 @@
   "type": "amazon-ebs",
   "region": "eu-west-1",
   "instance_type": "t2.micro",
-  "ami_name": "Packer-Example {{timestamp}}",
+  "ami_name": "webserver-{{timestamp}}",
   "user_data_file": "./scripts/SetUpWinRM.ps1",
   "communicator": "winrm",
   "winrm_username": "Administrator",
@@ -28,7 +28,8 @@
         {
             "type": "powershell",
             "scripts": [
-                "./scripts/SetUpDevTools.ps1"
+                "./scripts/SetUpDevTools.ps1",
+                "./scripts/SetUpWebServer.ps1"
             ]
         },
         {
@@ -45,7 +46,14 @@
             "source": "TestResults.xml",
             "destination": "TestResults.xml",
             "direction": "download"
-        }
+        },
+        {
+            "type": "powershell",
+            "inline": [
+            "C:/ProgramData/Amazon/EC2-Windows/Launch/Scripts/InitializeInstance.ps1 -Schedule",
+            "C:/ProgramData/Amazon/EC2-Windows/Launch/Scripts/SysprepInstance.ps1 -NoShutdown"
+    ]
+}
     ],
     "post-processors": [
         {

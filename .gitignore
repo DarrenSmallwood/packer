@@ -5,3 +5,4 @@ packer_cache/
 *.box
 
 variables.json
+packer-manifest.json
