@@ -4,13 +4,13 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/in
 choco feature enable -n allowGlobalConfirmation
 
 # Install .net 4.5.2
-choco install netfx-4.5.2-devpack
+#choco install netfx-4.5.2-devpack
 
 # Install build tools 2015
-choco install microsoft-build-tools --version 14.0.25420.1
+#choco install microsoft-build-tools --version 14.0.25420.1
 
-choco install nuget.commandline
-choco install git
+#choco install nuget.commandline
+#choco install git
 
 # Install Pester to run server tests
 choco install Pester
