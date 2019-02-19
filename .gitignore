@@ -6,3 +6,4 @@ packer_cache/
 
 variables.json
 packer-manifest.json
+TestResults.xml
